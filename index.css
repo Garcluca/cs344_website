@@ -43,9 +43,6 @@ div.buffer {
 
 }
 
-div.container { 
-
-}
 
 .tables-div {
 
@@ -114,6 +111,10 @@ form{
     background: rgba(255, 255, 255, 0.481);
     text-align: center;
 }
+/*.form-control{
+    text-align: center;
+}*/
+
 form h1{
     padding: 20px;
     background: rgb(255, 255, 255);
