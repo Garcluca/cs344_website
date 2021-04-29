@@ -14,7 +14,7 @@
   <title>Luigi's Pizza</title>
 </head>
 <nav id=rounded class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Luigi's Pizza</a>
+  <a class="navbar-brand" href="./index.html">Luigi's Pizza</a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
     aria-expanded="false" aria-label="Toggle navigation">
@@ -22,17 +22,17 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link" href="#">Customers <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="#">Orders</a>
-      <a class="nav-item nav-link" href="#">Payments</a>
-      <a class="nav-item nav-link" href="#">Menu</a>
+      <a class="nav-item nav-link" href="./customers.html">Customers <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="./orders.html">Orders</a>
+      <a class="nav-item nav-link" href="./payments.html">Payments</a>
+      <a class="nav-item nav-link" href="./menu.html">Menu</a>
+      <a class="nav-item nav-link" href="./orderitems.html">OrderItems</a>
 
     </div>
   </div>
 </nav>
 
 <body>
-  hello
   <div class="main">
 
 
@@ -43,8 +43,11 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Customers</h5>
-              <p class="card-text">This table holds a list of all customers that have ordered </p>
-              <a href="#" class="btn btn-primary">Go to Customers</a>
+              <p class="card-text">Displays all customers that have made an account on Luigi’s Pizza’s website. Please
+                note, a customer does not have to order at Luigi’s to be part of this list.</p>
+              <p class="card-text"> You can view, edit, or create a new order here.</p>
+
+              <a href=" ./customers.html" class="btn btn-primary">Go to Customers</a>
             </div>
           </div>
         </div>
@@ -53,8 +56,11 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Orders</h5>
-              <p class="card-text">This table displayes all orders that have been proesed</p>
-              <a href="#" class="btn btn-primary">Go to Orders</a>
+              <p class="card-text">Displays all orders placed by customers that have eaten at Luigi's and relevant
+                information pertaining to these orders.</p>
+
+              <p class="card-text"> You can view, edit, or create a new order here.</p>
+              <a href="./orders.html" class="btn btn-primary">View Orders Table</a>
             </div>
           </div>
         </div>
@@ -65,8 +71,9 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Payments</h5>
-              <p class="card-text">This table has financial informaition. very cash money</p>
-              <a href="#" class="btn btn-primary">Go to Crimes</a>
+              <p class="card-text">Displays all of the payments received by Luigi’s.</p>
+              <p class="card-text"> You can view, edit, or create a new payment here.</p>
+              <a href="./payments.html" class="btn btn-primary">View Payments Table</a>
             </div>
           </div>
         </div>
@@ -76,8 +83,10 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Menu</h5>
-              <p class="card-text">Food and other things that you counld eat</p>
-              <a href="#" class="btn btn-primary">Go Eat<a>
+              <p class="card-text">Displays all of the combo menu items offered at Luigi.</p>
+
+              <p class="card-text"> You can view, edit, or create a new menu item here.</p>
+              <a href="./menu.html" class="btn btn-primary">Go Eat<a>
             </div>
           </div>
         </div>
@@ -87,9 +96,12 @@
         <div class="col-sm-6">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Items</h5>
-              <p class="card-text">This table corresponds the items to different orders adn stuff</p>
-              <a href="#" class="btn btn-primary">Go To Items</a>
+              <h5 class="card-title">OrderItems</h5>
+              <p class="card-text">Intermediatry table that ties menu items to order ids (M:M relationship).
+                Table will handle deletion between either table if an item is removed. </p>
+
+              <p class="card-text">You can view, edit, or create a new relationship here.</p>
+              <a href="./orders.html" class="btn btn-primary">Go To Items</a>
             </div>
           </div>
         </div>
