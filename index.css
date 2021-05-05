@@ -137,6 +137,10 @@ form h1{
     padding: 5% 15%;
 }
 
-.Table .h1{
-    margin: 2em;
+.Table .table-header{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
 }
+
