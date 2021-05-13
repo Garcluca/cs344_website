@@ -20,5 +20,5 @@ CREATE TABLE payments (
     datePaid DATE NOT NULL,
     paymentType VARCHAR(255) NOT NULL
     
-    CONSTRAINT `ordderID` FOREIGN KEY (orderID) REFERENCES order (id)
+    CONSTRAINT `orderID` FOREIGN KEY (orderID) REFERENCES order (id)
 )
