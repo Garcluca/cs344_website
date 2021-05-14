@@ -1,32 +1,37 @@
---- Drop Tables
+# drop tables
 
-DROP TABLE IF EXISTS customers;
-DROP TABLE IF EXISTS menu;
-DROP TABLE IF EXISTS orderItems;
-DROP TABLE IF EXISTS payments;
-DROP TABLE IF EXISTS orders;
+DROP TABLE IF EXISTS `customers`;
+DROP TABLE IF EXISTS `menu`;
+DROP TABLE IF EXISTS `orderItems`;
+DROP TABLE IF EXISTS `payments`;
+DROP TABLE IF EXISTS `orders`;
 
--- Table Creation
+# table creation
 
-CREATE TABLE orders (
-    id INT NOT NULL AUTO_INCREMENT UNIQUE PRIMARY KEY,
-    dateOrdered DATE NOT NULL,
-    customerID INT,
+CREATE TABLE `orders` (
+  `orderID` int(11) NOT NULL AUTO_INCREMENT,
+  `dateOrdered` DATE NOT NULL,
+  `orderedBy` varchar(255) DEFAULT NULL,
+  
+  PRIMARY KEY (`orderID`)
+  KEY `customerID` (`customerID`),
+  CONSTRAINT `orders_fk` FOREIGN KEY (`orderedBy`) REFERENCES `customers` (`customerID`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
-    FOREIGN KEY(customerID) REFERENCES customer(id)
-)
-
-CREATE TABLE payments (
-    id INT NOT NULL AUTO_INCREMENT UNIQUE PRIMARY KEY,
-    customerID INT(11),
-    amountPaid DOUBLE NOT NULL,
-    datePaid DATE NOT NULL,
-    paymentType TEXT NOT NULL,
+CREATE TABLE `payments` (
+    `paymentID` INT(11) NOT NULL AUTO_INCREMENT,
+    `paidBy` INT(11) DEFAULT NULL,
+    `amountPaid` decimal(10,2) NOT NULL,
+    `datePaid` DATE NOT NULL,
+    `paymentType` TEXT NOT NULL,
     
-    FOREIGN KEY(customerID) REFERENCES customer(id)
-)
+    PRIMARY KEY(`paymentID`)
+    KEY `paidBy` (`paidBy`),
+    CONSTRAINT `payment_fk` FOREIGN KEY (`paidBy`) REFERENCES `customers` (`customerID`)
 
---- Insert data into Tables
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
+# insert data into tables
 
 INSERT INTO orders (dateOrdered)
 VALUES ('2021-02-12'),
