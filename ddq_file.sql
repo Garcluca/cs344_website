@@ -10,9 +10,11 @@ DROP TABLE IF EXISTS `orders`;
 
 CREATE TABLE `orders` (
   `orderID` int(11) NOT NULL AUTO_INCREMENT,
-  `dateOrdered` DATE NOT NULL,
-  `orderedBy` varchar(255) DEFAULT NULL,
-  
+  `dateOrdered` DATE,
+  `orderedBy` varchar(255),
+  # gave me trouble if i left this as customerID, likewise with next table
+
+
   PRIMARY KEY (`orderID`)
   KEY `customerID` (`customerID`),
   CONSTRAINT `orders_fk` FOREIGN KEY (`orderedBy`) REFERENCES `customers` (`customerID`)
@@ -20,7 +22,7 @@ CREATE TABLE `orders` (
 
 CREATE TABLE `payments` (
     `paymentID` INT(11) NOT NULL AUTO_INCREMENT,
-    `paidBy` INT(11) DEFAULT NULL,
+    `paidBy` INT(11),
     `amountPaid` decimal(10,2) NOT NULL,
     `datePaid` DATE NOT NULL,
     `paymentType` TEXT NOT NULL,
